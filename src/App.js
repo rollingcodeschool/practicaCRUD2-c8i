@@ -2,7 +2,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-    return <div></div>;
+    return <div>prueba</div>;
 }
 
 export default App;
