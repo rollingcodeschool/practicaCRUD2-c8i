@@ -1,0 +1,25 @@
+{
+    "productos":[
+        {
+            "nombreProducto":"café",
+            "precio":300,
+            "categoria":"calientes",
+            "imagen":"https://media.istockphoto.com/photos/cup-of-espresso-with-coffee-beans-picture-id1177900338?s=612x612",
+            "id":1
+        },
+        {
+            "nombreProducto":"brownie",
+            "precio":250,
+            "categoria":"dulces",
+            "imagen":"https://media.istockphoto.com/photos/fresh-croissant-picture-id493317672?s=612x612",
+            "id":2
+        },
+        {
+            "nombreProducto":"te",
+            "precio":150,
+            "categoria":"calientes",
+            "imagen":"https://media.istockphoto.com/photos/ginger-root-tea-with-lemon-honey-and-mint-picture-id590242446?s=612x612",
+            "id":3
+        }
+    ]
+}
