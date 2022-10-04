@@ -21,7 +21,7 @@ function App() {
                 <Route path="*" element={<Error />} />
                 <Route exact path="/detalle" element={<DetalleProducto />} />
                 <Route exact path="/crear" element={<CrearProducto />} />
-                <Route exact pact="/editar" element={<EditarProducto/>} />
+                <Route exact path="/edit" element={<EditarProducto />} />
             </Routes>
             <Footer />
         </BrowserRouter>
