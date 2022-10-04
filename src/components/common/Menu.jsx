@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 const Menu = () => {
     return (
         <header>
-            <Navbar bg="warning" expand="lg">
+            <Navbar bg="danger" expand="lg">
                 <Container>
                     <Navbar.Brand as={Link} to="/">
                         Cafe Sampy

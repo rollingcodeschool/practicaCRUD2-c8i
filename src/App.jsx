@@ -5,6 +5,7 @@ import Inicio from "./components/views/Inicio";
 import Error from "./components/views/Error";
 import Menu from "./components/common/Menu";
 import Footer from "./components/common/Footer";
+import DetalleProducto from "./components/views/producto/DetalleProducto";
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                 <Route exact path="/" element={<Inicio />} />
                 <Route exact path="/administrar" element={<Administrador />} />
                 <Route path="*" element={<Error />} />
+                <Route exact path="/detalle" element={<DetalleProducto />} />
             </Routes>
             <Footer />
         </BrowserRouter>

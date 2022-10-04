@@ -11,14 +11,14 @@
             "nombreProducto":"brownie",
             "precio":250,
             "categoria":"dulces",
-            "imagen":"https://media.istockphoto.com/photos/fresh-croissant-picture-id493317672?s=612x612",
+            "imagen":"https://images.pexels.com/photos/887853/pexels-photo-887853.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "id":2
         },
         {
             "nombreProducto":"te",
             "precio":150,
             "categoria":"calientes",
-            "imagen":"https://media.istockphoto.com/photos/ginger-root-tea-with-lemon-honey-and-mint-picture-id590242446?s=612x612",
+            "imagen":"https://images.pexels.com/photos/230477/pexels-photo-230477.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "id":3
         }
     ]
