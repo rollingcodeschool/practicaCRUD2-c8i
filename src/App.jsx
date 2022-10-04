@@ -6,6 +6,8 @@ import Error from "./components/views/Error";
 import Menu from "./components/common/Menu";
 import Footer from "./components/common/Footer";
 import DetalleProducto from "./components/views/producto/DetalleProducto";
+import CrearProducto from "./components/views/producto/CrearProducto";
+import EditarProducto from "./components/views/producto/EditarProducto";
 
 function App() {
     return (
@@ -18,6 +20,8 @@ function App() {
                 <Route exact path="/administrar" element={<Administrador />} />
                 <Route path="*" element={<Error />} />
                 <Route exact path="/detalle" element={<DetalleProducto />} />
+                <Route exact path="/crear" element={<CrearProducto />} />
+                <Route exact pact="/editar" element={<EditarProducto/>} />
             </Routes>
             <Footer />
         </BrowserRouter>
