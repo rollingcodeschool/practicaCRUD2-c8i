@@ -33,7 +33,7 @@ const ItemProducto = ({producto, setProductos}) => {
                 <td>{imagen}</td>
                 <td>{categoria}</td>
                 <td className="text-center">
-                    <Link className='btn btn-outline-warning me-1' to={`/administrar/editar/:id`}>
+                    <Link className='btn btn-outline-warning me-1' to={`/administrar/editar/${id}`}>
                         <i className="bi bi-arrow-clockwise text-warning"></i>
                     </Link>
                     <Button variant="outline-danger" onClick={borrarProducto}>
