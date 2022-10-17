@@ -34,6 +34,34 @@
       "categoria": "Bebida caliente",
       "imagen": "https://images.pexels.com/photos/230477/pexels-photo-230477.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "id": 5
+    },
+    {
+      "nombreProducto": "té de prueba",
+      "precio": 300,
+      "categoria": "bebida caliente",
+      "imagen": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "id": 6
+    },
+    {
+      "nombreProducto": "medialuna",
+      "precio": "50",
+      "imagen": "https://images.pexels.com/photos/1672304/pexels-photo-1672304.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "categoria": "Dulce",
+      "id": 7
+    },
+    {
+      "nombreProducto": "torta de hojaldre",
+      "precio": "300",
+      "imagen": "https://images.pexels.com/photos/1672304/pexels-photo-1672304.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "categoria": "Dulce",
+      "id": 8
+    },
+    {
+      "nombreProducto": "Porcion de torta ML",
+      "precio": "350",
+      "imagen": "https://images.pexels.com/photos/1672304/pexels-photo-1672304.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "categoria": "Dulce",
+      "id": 9
     }
   ]
 }

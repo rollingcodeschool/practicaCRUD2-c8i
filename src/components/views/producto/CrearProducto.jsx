@@ -1,18 +1,33 @@
 import { Form, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
+import { crearProductoAPI } from "../../helpers/queries";
+import { useNavigate } from "react-router-dom";
 
 const CrearProducto = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset
   } = useForm();
+  //inicializar useNavigate
+  const navegacion = useNavigate();
 
   const onSubmit = (data) => {
     console.log(data);
     //enviar la peticion a la API
-
-    
+    crearProductoAPI(data).then((respuesta)=>{
+      if(respuesta.status===201){
+        Swal.fire('Producto creado', 'El producto fue correctamente cargado','success')
+        //aqui quiero resetear los value del formulario
+        reset();
+        //redireccionar al usuario a la pagina de administracion
+        navegacion('/administrar');
+      }else{
+        Swal.fire('Ocurrio un error', 'Intente esta operacion en unos minutos','error')
+      }
+    })
   };
 
   return (
