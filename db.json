@@ -8,34 +8,6 @@
       "id": 1
     },
     {
-      "nombreProducto": "brownie",
-      "precio": 250,
-      "categoria": "Dulce",
-      "imagen": "https://images.pexels.com/photos/887853/pexels-photo-887853.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "id": 2
-    },
-    {
-      "nombreProducto": "te",
-      "precio": 150,
-      "categoria": "Bebida caliente",
-      "imagen": "https://images.pexels.com/photos/230477/pexels-photo-230477.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "id": 3
-    },
-    {
-      "nombreProducto": "brownie",
-      "precio": 150,
-      "categoria": "Bebida caliente",
-      "imagen": "https://images.pexels.com/photos/230477/pexels-photo-230477.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "id": 4
-    },
-    {
-      "nombreProducto": "brownie 2",
-      "precio": 150,
-      "categoria": "Bebida caliente",
-      "imagen": "https://images.pexels.com/photos/230477/pexels-photo-230477.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "id": 5
-    },
-    {
       "nombreProducto": "té de prueba",
       "precio": 300,
       "categoria": "bebida caliente",
@@ -63,5 +35,6 @@
       "categoria": "Dulce",
       "id": 9
     }
-  ]
+  ],
+  "usuarios": []
 }
