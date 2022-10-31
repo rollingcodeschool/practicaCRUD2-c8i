@@ -4,12 +4,12 @@ import { borrarProductoAPI, consultarAPI } from "../../helpers/queries";
 import Swal from "sweetalert2";
 
 const ItemProducto = ({producto, setProductos}) => {
-    const {id, nombreProducto, precio, imagen, categoria } = {...producto}
+    const {_id, nombreProducto, precio, imagen, categoria } = {...producto}
 
     const borrarProducto = ()=>{
         // TAREA: agregar con SWAL una ventana que pregunte al usuario si desea eliminar el producto
         // si presiona que si entonces hago el siguiente
-        borrarProductoAPI(id).then((respuesta)=>{
+        borrarProductoAPI(_id).then((respuesta)=>{
             if(respuesta.status === 200){
                 Swal.fire('Producto eliminado', 'El producto fue correctamente eliminado','success');
                 //busco todos los productos existentes en ese instante de tiempo
@@ -26,14 +26,14 @@ const ItemProducto = ({producto, setProductos}) => {
     return (
         <>
             <tr>
-                {/* <td>{producto.id}</td> */}
-                <td>{id}</td>
+                {/* <td>{producto._id}</td> */}
+                <td>{_id}</td>
                 <td>{nombreProducto}</td>
                 <td>${precio}</td>
                 <td>{imagen}</td>
                 <td>{categoria}</td>
                 <td className="text-center">
-                    <Link className='btn btn-outline-warning me-1' to={`/administrar/editar/${id}`}>
+                    <Link className='btn btn-outline-warning me-1' to={`/administrar/editar/${_id}`}>
                         <i className="bi bi-arrow-clockwise text-warning"></i>
                     </Link>
                     <Button variant="outline-danger" onClick={borrarProducto}>
