@@ -93,33 +93,6 @@ export const crearUsuario = async (usuario) => {
   }
 };
 
-// export const login = async (usuario) => {
-//     // peticion get
-//     try {
-//       //codigo que quiero ejecutar
-//       const respuesta = await fetch(URL_USER);
-//       const listaUsuarios = await respuesta.json();
-//       console.log(listaUsuarios)
-//       const buscarUsuario = listaUsuarios.find((buscarUsuario)=>buscarUsuario.email===usuario.usuario)
-//       if(buscarUsuario){
-//         console.log('encontre el mail');
-//         if(buscarUsuario.password === usuario.password){
-//           console.log('encontre el usuario')
-//           return buscarUsuario
-//         }else{
-//           console.log('pass incorrecto')
-//           return 
-//         }
-//       }else{
-//         console.log('no esta el usuario')
-//         return
-//       }
-//     } catch (error) {
-//       console.log(error);
-//       return false;
-//     }
-//   };
-
 export const login = async (usuario) =>{
   try{
     //verificar si el usuario existe
