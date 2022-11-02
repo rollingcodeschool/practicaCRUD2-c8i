@@ -44,10 +44,34 @@
       "id": 1
     },
     {
-      "usuario": "emi",
-      "email": "emi@gmail.com",
+      "usuario": "agustin",
+      "email": "agustin@mail.com",
       "password": "12345678",
       "id": 2
+    },
+    {
+      "usuario": "prueba",
+      "email": "prueba@mail.com",
+      "password": "12345678",
+      "id": 3
+    },
+    {
+      "usuario": "pablo",
+      "email": "pablo@mail.com",
+      "password": "12345678",
+      "id": 4
+    },
+    {
+      "usuario": "jose",
+      "email": "josefina@mail.com",
+      "password": "12345678",
+      "id": 5
+    },
+    {
+      "usuario": "vicky",
+      "email": "vicky@mail.com",
+      "password": "12345678",
+      "id": 6
     }
   ]
 }

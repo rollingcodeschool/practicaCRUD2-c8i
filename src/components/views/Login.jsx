@@ -5,7 +5,6 @@ import { login } from "../helpers/queries";
 import Swal from "sweetalert2";
 
 const Login = ({ setUsuarioLogueado }) => {
-
   const navigate = useNavigate();
   const {
     register,
@@ -21,8 +20,7 @@ const Login = ({ setUsuarioLogueado }) => {
         //almaceno el usuario en el state y localstorage
         localStorage.setItem("tokenUsuario", JSON.stringify(respuesta));
         setUsuarioLogueado(respuesta);
-        // si el usuario es correcto entonces redirecciono al inicio
-        //redireccionar al home
+        // si el usuario es correcto entonces redirecciono al admin
         navigate("/administrar");
       } else {
         Swal.fire(
@@ -46,7 +44,7 @@ const Login = ({ setUsuarioLogueado }) => {
                 type="email"
                 placeholder="Ingrese un email"
                 {...register("usuario", {
-                  required: "El nombre de usuario es obligatorio",
+                  required: "El mail del usuario es obligatorio",
                 })}
               />
               <Form.Text className="text-danger">
@@ -67,11 +65,8 @@ const Login = ({ setUsuarioLogueado }) => {
                 {errors.password?.message}
               </Form.Text>
             </Form.Group>
-            <div className="mb-3">
-              <Link to={"/registro"}>Crear una cuenta</Link>
-            </div>
             <Button variant="primary" type="submit">
-              Iniciar
+              Ingresar
             </Button>
           </Form>
         </Card.Body>

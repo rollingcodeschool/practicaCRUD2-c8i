@@ -13,6 +13,7 @@ const Registro = ({setUsuarioLogueado}) => {
     register,
     handleSubmit,
     formState: { errors },
+    reset
   } = useForm();
 
 
@@ -20,16 +21,17 @@ const Registro = ({setUsuarioLogueado}) => {
       crearUsuario(datos).then((respuesta) => {
         if (respuesta.status === 201) {
           Swal.fire(
-            `Te registraste correctamente, ${datos.usuario}`,
-            "Bienvenido a la web de cafecito",
+            `Usuario creado`,
+            `El usuario ${datos.usuario} se creo correctamente`,
             "success"
           );
-          //guardar la sesion del usuario en localstorage
-            localStorage.setItem('tokenCafe', JSON.stringify(datos));
-            //actualizar el state usuarioLogueado
-            setUsuarioLogueado(datos)
-            // redireccionamos
-            navigate("/administrar");
+          reset()
+          // //guardar la sesion del usuario en localstorage
+          //   localStorage.setItem('tokenUsuario', JSON.stringify(datos));
+          //   //actualizar el state usuarioLogueado
+          //   setUsuarioLogueado(datos)
+          //   // redireccionamos
+          //   navigate("/administrar");
         } else {
           Swal.fire(
             `Hubo un error inesperado`,
@@ -115,15 +117,8 @@ const Registro = ({setUsuarioLogueado}) => {
                 className="btn btn-dark btn-lg btn-block mb-2"
                 type="submit"
               >
-                Registrarse
+                Registrar
               </Button>
-              <button
-                className="btn btn-danger btn-sm mt-2"
-                type="button"
-                onClick={() => navigate("/login")}
-              >
-                ¿Ya estas registrado?
-              </button>
             </div>
           </Form>
         </div>

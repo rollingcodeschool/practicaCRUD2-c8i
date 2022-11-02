@@ -93,32 +93,52 @@ export const crearUsuario = async (usuario) => {
   }
 };
 
-export const login = async (usuario) => {
-    // peticion get
-    try {
-      //codigo que quiero ejecutar
-      const respuesta = await fetch(URL_USER);
-      const listaUsuarios = await respuesta.json();
-      console.log(listaUsuarios)
-      const buscarUsuario = listaUsuarios.find((buscarUsuario)=>buscarUsuario.email===usuario.usuario)
-      if(buscarUsuario){
-        console.log('encontre el mail');
-        console.log(usuario.usuario);
-        console.log(usuario.password);
-        if(buscarUsuario.password == usuario.password){
-          console.log('pass incorrecto')
-          return
-        }else{
-          console.log('encontre el usuario')
-          return buscarUsuario
-        }
-      }else{
-        console.log('no esta')
-        return
+// export const login = async (usuario) => {
+//     // peticion get
+//     try {
+//       //codigo que quiero ejecutar
+//       const respuesta = await fetch(URL_USER);
+//       const listaUsuarios = await respuesta.json();
+//       console.log(listaUsuarios)
+//       const buscarUsuario = listaUsuarios.find((buscarUsuario)=>buscarUsuario.email===usuario.usuario)
+//       if(buscarUsuario){
+//         console.log('encontre el mail');
+//         if(buscarUsuario.password === usuario.password){
+//           console.log('encontre el usuario')
+//           return buscarUsuario
+//         }else{
+//           console.log('pass incorrecto')
+//           return 
+//         }
+//       }else{
+//         console.log('no esta el usuario')
+//         return
+//       }
+//     } catch (error) {
+//       console.log(error);
+//       return false;
+//     }
+//   };
+
+export const login = async (usuario) =>{
+  try{
+    //verificar si el usuario existe
+    const respuesta = await fetch(URL_USER);
+    const listaUsuarios = await respuesta.json();
+    //buscar cual usuario tiene mi mail
+    const usuarioBuscado = listaUsuarios.find((itemUsuario)=> itemUsuario.email === usuario.usuario )
+    if(usuarioBuscado){
+      console.log('email encontrado')
+      //verificar el password
+      if(usuarioBuscado.password === usuario.password ){
+        return usuarioBuscado
       }
-  
-    } catch (error) {
-      console.log(error);
-      return false;
+    }else{
+      console.log('el mail no existe')
+      return
     }
-  };
+  }catch(error){
+    console.log('errores en el login')
+    return
+  }
+}

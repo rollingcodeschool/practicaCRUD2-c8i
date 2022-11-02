@@ -20,7 +20,7 @@ function App() {
   return (
     //administrar las rutas;
     <BrowserRouter>
-      <Menu />
+      <Menu usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado} />
       <Routes>
         {/* dominio + path */}
         <Route exact path="/" element={<Inicio />} />
