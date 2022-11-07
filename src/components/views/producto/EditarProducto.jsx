@@ -29,9 +29,12 @@ const EditarProducto = () => {
   }, []);
 
   const onSubmit = (datos) => {
+     // busco el token de localstorage y lo envio
+     const token =
+     JSON.parse(localStorage.getItem("tokenUsuario")).token || null;
     console.log(datos);
     //pedir a la api actualizar el producto con los datos
-    editarProductoAPI(id, datos).then((respuesta)=>{
+    editarProductoAPI(id, datos, token).then((respuesta)=>{
       if(respuesta.status === 200){
         Swal.fire('Producto modificado', 'El producto fue modificado correctamente', 'success');
         navegacion('/administrar');

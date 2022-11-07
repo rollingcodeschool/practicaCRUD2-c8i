@@ -72,6 +72,16 @@
       "email": "vicky@mail.com",
       "password": "12345678",
       "id": 6
+    },
+    {
+      "usuario": "vicky@mail.com",
+      "password": "12345678",
+      "id": 7
+    },
+    {
+      "usuario": "vicky@mail.com",
+      "password": "12345678",
+      "id": 8
     }
   ]
 }

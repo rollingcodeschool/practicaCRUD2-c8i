@@ -16,7 +16,7 @@ const Login = ({ setUsuarioLogueado }) => {
     console.log(data);
     login(data).then((respuesta) => {
       console.log(respuesta);
-      if (respuesta) {
+      if (respuesta.status === 200) {
         //almaceno el usuario en el state y localstorage
         localStorage.setItem("tokenUsuario", JSON.stringify(respuesta));
         setUsuarioLogueado(respuesta);
@@ -43,12 +43,12 @@ const Login = ({ setUsuarioLogueado }) => {
               <Form.Control
                 type="email"
                 placeholder="Ingrese un email"
-                {...register("usuario", {
+                {...register("email", {
                   required: "El mail del usuario es obligatorio",
                 })}
               />
               <Form.Text className="text-danger">
-                {errors.usuario?.message}
+                {errors.email?.message}
               </Form.Text>
             </Form.Group>
 

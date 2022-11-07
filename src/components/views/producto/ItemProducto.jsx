@@ -7,9 +7,12 @@ const ItemProducto = ({producto, setProductos}) => {
     const {_id, nombreProducto, precio, imagen, categoria } = {...producto}
 
     const borrarProducto = ()=>{
+         // busco el token de localstorage y lo envio
+    const token =
+    JSON.parse(localStorage.getItem("tokenUsuario")).token || null;
         // TAREA: agregar con SWAL una ventana que pregunte al usuario si desea eliminar el producto
         // si presiona que si entonces hago el siguiente
-        borrarProductoAPI(_id).then((respuesta)=>{
+        borrarProductoAPI(_id, token).then((respuesta)=>{
             if(respuesta.status === 200){
                 Swal.fire('Producto eliminado', 'El producto fue correctamente eliminado','success');
                 //busco todos los productos existentes en ese instante de tiempo

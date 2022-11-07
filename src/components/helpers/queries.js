@@ -18,12 +18,14 @@ export const consultarAPI = async () => {
   }
 };
 
-export const crearProductoAPI = async (producto) => {
+export const crearProductoAPI = async (producto,token) => {
   try {
     const respuesta = await fetch(URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        // el token que esta en el localstorage
+        "x-token": token
       },
       body: JSON.stringify(producto),
     });
@@ -33,11 +35,16 @@ export const crearProductoAPI = async (producto) => {
     return false;
   }
 };
-export const borrarProductoAPI = async (id) => {
+export const borrarProductoAPI = async (id, token) => {
   try {
     const respuesta = await fetch(URL + "/" + id, {
       method: "DELETE",
+      headers: {
+        // envio el token en el header personalizado
+        "x-token": token,
+      },
     });
+
     return respuesta;
   } catch (error) {
     console.log(error);
@@ -60,13 +67,14 @@ export const obtenerProductoAPI = async (id) => {
   }
 };
 
-export const editarProductoAPI = async (id, producto) => {
+export const editarProductoAPI = async (id, producto, token) => {
   try {
     // console.log(URL)
     const respuesta = await fetch(URL + "/" + id, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
+        "x-token": token,
       },
       body: JSON.stringify(producto),
     });
@@ -94,24 +102,25 @@ export const crearUsuario = async (usuario) => {
 };
 
 export const login = async (usuario) =>{
-  try{
-    //verificar si el usuario existe
-    const respuesta = await fetch(URL_USER);
-    const listaUsuarios = await respuesta.json();
-    //buscar cual usuario tiene mi mail
-    const usuarioBuscado = listaUsuarios.find((itemUsuario)=> itemUsuario.email === usuario.usuario )
-    if(usuarioBuscado){
-      console.log('email encontrado')
-      //verificar el password
-      if(usuarioBuscado.password === usuario.password ){
-        return usuarioBuscado
-      }
-    }else{
-      console.log('el mail no existe')
-      return
-    }
-  }catch(error){
-    console.log('errores en el login')
-    return
+  try {
+    console.log(usuario);
+    const respuesta = await fetch(URL_USER, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(usuario),
+    });
+    const datos = await respuesta.json();
+    return {
+      status: respuesta.status,
+      mensaje: datos.mensaje,
+      usuario: datos.usuario,
+      token: datos.token,
+      uid: datos.uid,
+    };
+  } catch (error) {
+    console.log("errores en el login");
+    return;
   }
 }

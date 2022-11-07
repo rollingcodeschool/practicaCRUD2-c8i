@@ -9,25 +9,36 @@ const CrearProducto = () => {
     register,
     handleSubmit,
     formState: { errors },
-    reset
+    reset,
   } = useForm();
   //inicializar useNavigate
   const navegacion = useNavigate();
 
   const onSubmit = (data) => {
+    // busco el token de localstorage y lo envio
+    const token =
+      JSON.parse(localStorage.getItem("tokenUsuario")).token || null;
     console.log(data);
     //enviar la peticion a la API
-    crearProductoAPI(data).then((respuesta)=>{
-      if(respuesta.status===201){
-        Swal.fire('Producto creado', 'El producto fue correctamente cargado','success')
+    crearProductoAPI(data, token).then((respuesta) => {
+      if (respuesta.status === 201) {
+        Swal.fire(
+          "Producto creado",
+          "El producto fue correctamente cargado",
+          "success"
+        );
         //aqui quiero resetear los value del formulario
         reset();
         //redireccionar al usuario a la pagina de administracion
-        navegacion('/administrar');
-      }else{
-        Swal.fire('Ocurrio un error', 'Intente esta operacion en unos minutos','error')
+        navegacion("/administrar");
+      } else {
+        Swal.fire(
+          "Ocurrio un error",
+          "Intente esta operacion en unos minutos",
+          "error"
+        );
       }
-    })
+    });
   };
 
   return (
@@ -101,10 +112,11 @@ const CrearProducto = () => {
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Select aria-label="Default select example"
-            {...register('categoria',{
-                required:'Debe seleccionar una categoria'
-            })}
+            <Form.Select
+              aria-label="Default select example"
+              {...register("categoria", {
+                required: "Debe seleccionar una categoria",
+              })}
             >
               <option value="">Seleccione una opción...</option>
               <option value="Bebida caliente">Bebida caliente</option>
@@ -113,7 +125,7 @@ const CrearProducto = () => {
               <option value="Salado">Salado</option>
             </Form.Select>
             <Form.Text className="text-danger">
-                {errors.categoria?.message}
+              {errors.categoria?.message}
             </Form.Text>
           </Form.Group>
           <Button variant="primary" type="submit">
