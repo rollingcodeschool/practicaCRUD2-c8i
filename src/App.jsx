@@ -12,6 +12,8 @@ import EditarProducto from "./components/views/producto/EditarProducto";
 import { useState } from "react";
 import Login from "./components/views/Login";
 import Registro from "./components/views/Registro";
+import RutasProtegidas from "./components/routes/RutasProtegidas";
+import RutasAdmin from "./components/routes/RutasAdmin";
 
 function App() {
   const usuario = JSON.parse(localStorage.getItem("tokenUsuario")) || {};
@@ -24,29 +26,24 @@ function App() {
       <Routes>
         {/* dominio + path */}
         <Route exact path="/" element={<Inicio />} />
-        <Route exact path="/administrar" element={<Administrador />} />
-        <Route path="*" element={<Error />} />
         <Route
           exact
           path="/administrar/detalle/:id"
           element={<DetalleProducto />}
-        />
-        <Route exact path="/administrar/crear" element={<CrearProducto />} />
-        <Route
-          exact
-          path="/administrar/editar/:id"
-          element={<EditarProducto />}
         />
         <Route
           exact
           path="/login"
           element={<Login setUsuarioLogueado={setUsuarioLogueado}/>}
         />
-        <Route
-          exact
-          path="/registro"
-          element={<Registro setUsuarioLogueado={setUsuarioLogueado} />}
-        />
+        <Route path="/administrar/*" element={
+          <RutasProtegidas>
+             <RutasAdmin setUsuarioLogueado={setUsuarioLogueado}></RutasAdmin>
+          </RutasProtegidas>
+        }>
+
+        </Route>
+        <Route path="*" element={<Error />} />   
       </Routes>
       <Footer />
     </BrowserRouter>

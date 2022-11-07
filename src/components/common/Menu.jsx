@@ -20,15 +20,15 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link as={NavLink} to="/">
+              <Nav.Link end as={NavLink} to="/">
                 Inicio
               </Nav.Link>
               {usuarioLogueado.usuario ? (
                 <>
-                  <NavLink to="/administrar" className={"nav-item nav-link"}>
+                  <NavLink end to="/administrar" className={"nav-item nav-link"}>
                     Aministrador
                   </NavLink>
-                  <NavLink to="/registro" className={"nav-item nav-link"}>
+                  <NavLink end to="/administrar/registro" className={"nav-item nav-link"}>
                     Registrar
                   </NavLink>
                   <Button variant='dark' onClick={logout}>
@@ -36,7 +36,7 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
                   </Button>
                 </>
               ) : (
-                <NavLink to="/login" className={"nav-item nav-link"}>
+                <NavLink end to="/login" className={"nav-item nav-link"}>
                   Login
                 </NavLink>
               )}
